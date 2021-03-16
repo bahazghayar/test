@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main> 
+            <div>  
+                <h2>Total Confirmed: <%= worldCases.TotalConfirmed  %>  </h2>
+                <h2>Total Deaths: <%= worldCases.TotalDeaths  %></h2>
+                <h2>TotalRecovered: <%= worldCases.TotalRecovered  %></h2>
+            </div>    
+
+            <form action="/getCountryResult" method="GET">
+                     
+                <input type="text" name="country" placeholder="Country Name">
+                <input type="date" name="from" placeholder="From">
+                <input type="date" name="to" placeholder="To">
+
+                <input type="submit" value="Get the results">
+
+            </form>
+
+    </main>
+   <footer>
+
+
+   </footer>
+</body>
+</html>

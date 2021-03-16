@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div>
+            <% data.forEach(element=>{ %>
+                <h2>Country: <%= element.country %>
+                </h2>
+                <h2>Total Confirmed: <%= element.totalConfirmed %>
+                </h2>
+                <h2>Total Deaths: <%= element.totalDeaths %>
+                </h2>
+                <h2>Total Recovered : <%= element.totalRecovered %>
+                </h2>
+                <h2>Date: <%= element.date %>
+                </h2>
+                
+                <form action="/myRecords" method="POST">
+                     
+                    <input type="hidden" name="country" value="<%= element.country %>">
+                    <input type="hidden" name="totalConfirmed" value="<%= element.totalConfirmed %>" >
+                    <input type="hidden" name="totalDeaths" value="<%= element.totalDeaths %>">
+                    <input type="hidden" name="totalRecovered" value="<%= element.totalRecovered %>">
+                    <input type="hidden" name="date" value="<%= element.date %>">
+    
+                    <input type="submit" value="add to my records">
+    
+                </form>
+                <% }); %>
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

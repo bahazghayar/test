@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div>
+            <h2>Country: <%= data.country %>
+            </h2>
+            <h2>Total Confirmed: <%= data.totalconfirmed %>
+            </h2>
+            <h2>Total Deaths: <%= data.totaldeaths %>
+            </h2>
+            <h2>Total Recovered : <%= data.totalrecovered %>
+            </h2>
+            <h2>Date: <%= data.date %>
+            </h2>
+
+            <form action="/updateRecordDetail/<%= data.id%>?_method=put" method="POST">
+                <input type="text" name="country" value="<%= data.country%>">
+                <input type="number" name="totalConfirmed" value="<%= data.totalconfirmed%>">
+                <input type="number" name="totalDeaths" value="<%= data.totaldeaths%>">
+                <input type="number" name="totalRecovered" value="<%= data.totalrecovered%>">
+                <input type="text" name="date" value="<%= data.date%>">
+                <input type="submit" value="UPDATE">
+            </form>
+
+            <form action="/deleteRecordDetail/<%= data.id%>?_method=delete" method="POST">
+                <input type="submit" value="DELETE">
+            </form>
+        </div>
+
+    </main>
+    <footer></footer>
+</body>
+
+</html>
